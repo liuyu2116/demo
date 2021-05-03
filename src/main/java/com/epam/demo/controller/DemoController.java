@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.TimeUnit;
 /**
- * @description（类描述）: 该类为调用短信接口的controller接口，实现了流量控制
- * @author（创建人）: yliu
- * @createDate（创建时间）: 2021/5/3
- * @version（版本）: v1.0
+ * @description: 该类为调用短信接口的controller接口，实现了流量控制
+ * @author: yliu
+ * @createDate: 2021/5/3
+ * @version: v1.0
  */
 @RestController
 public class DemoController {

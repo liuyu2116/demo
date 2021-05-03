@@ -1,9 +1,9 @@
 package com.epam.demo.enmu;
 /**
- * @description（类描述）: 该类为接口调用状态的枚举类，提供了可能会出现的各种调用状态的枚举
- * @author（创建人）: yliu
- * @createDate（创建时间）: 2021/5/3
- * @version（版本）: v1.0
+ * @description: 该类为接口调用状态的枚举类，提供了可能会出现的各种调用状态的枚举
+ * @author： yliu
+ * @createDate: 2021/5/3
+ * @version: v1.0
  */
 public enum SendResult {
     SUCCESS(200, "短信发送成功，请接收"),
