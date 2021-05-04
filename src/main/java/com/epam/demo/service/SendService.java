@@ -5,5 +5,5 @@ package com.epam.demo.service;
 
  */
 public interface SendService {
-    public String send();
+    public Boolean send();
 }

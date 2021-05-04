@@ -18,24 +18,26 @@ public class SendServiceImpl implements SendService {
     @Autowired
     Message message;
 
+    private final int RETRY_TIMES = 3;
+
 
     /**
      * @description: 调用发送短信并提供连接重试
-     * @return : 返回发送是否成功的信息
+     * @return : 返回发送是否成功
      */
     @Override
-    public String send() {
+    public Boolean send() {
         int times = 0;
-        while (times < 3) {
+        while (times < RETRY_TIMES) {
             try{
                 //调用某第三方api发送短信,根据条件假设已获得，这里省略
                 message.send();
-                return SendResult.SUCCESS.getMessage();
+                return true;
             } catch (ConnectException e){
                 times++;  //计数器加1
                 e.printStackTrace();
             }
         }
-        return SendResult.FAIL.getMessage();
+        return false;
     }
 }

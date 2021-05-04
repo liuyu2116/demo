@@ -31,7 +31,7 @@ public class DemoController {
         //尝试获取令牌，根据获取结果返回true或false
         if (this.rateLimiter.tryAcquire()){
             //调取发送短信的服务类
-            return sendService.send();
+            return sendService.send()==true ? SendResult.SUCCESS.getMessage() :  SendResult.FAIL.getMessage();
         }
         return SendResult.BLOCK.getMessage();
     }
