@@ -21,7 +21,7 @@ public class DemoController {
     /**
      * 创建一个限速器，每一秒钟，产生100个令牌
      */
-    private RateLimiter rateLimiter = RateLimiter.create(100,1, TimeUnit.SECONDS);
+    private RateLimiter rateLimiter = RateLimiter.create(100);
 
 
     /**
