@@ -6,8 +6,6 @@ import com.google.common.util.concurrent.RateLimiter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.concurrent.TimeUnit;
 /**
  * @description: 该类为调用短信接口的controller接口，实现了流量控制
  * @author: yliu
@@ -30,12 +28,11 @@ public class DemoController {
      */
     @PostMapping(value = "/send")
     public String messageSend(){
+        //尝试获取令牌，根据获取结果返回true或false
         if (this.rateLimiter.tryAcquire()){
             //调取发送短信的服务类
             return sendService.send();
         }
         return SendResult.BLOCK.getMessage();
     }
-
-
 }
